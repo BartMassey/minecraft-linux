@@ -19,7 +19,7 @@
 # Description:       Starts the Minecraft server.
 ### END INIT INFO
 
-SERVERDIR=/usr/local/opt/minecraft-server
+SERVERDIR=/usr/share/minecraft-server
 
 # See how we were called.
 case "$1" in

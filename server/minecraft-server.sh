@@ -3,7 +3,7 @@
 # [This program is licensed under the "MIT License"]
 # Please see the file COPYING in the source
 # distribution of this software for license terms.
-SERVER_DIR=/usr/local/opt/minecraft-server
+SERVER_DIR=/usr/share/minecraft-server
 cd $SERVER_DIR
 case $1 in
 start)
