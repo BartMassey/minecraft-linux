@@ -54,10 +54,10 @@ cd "$SERVER_DIR"
 mkdir .ssh
 ( cd .ssh &&
   chmod 700 . &&
-  ssh-keygen -N '' -t rsa -b 2048 -f id-rsa-minecraft &&
-  mv id-rsa-minecraft.pub authorized_keys &&
+  ssh-keygen -N '' -t rsa -b 2048 -f id-rsa-minecrft &&
+  mv id-rsa-minecrft.pub authorized_keys &&
   chmod 600 authorized_keys &&
-  mv id-rsa-minecraft .. )
+  mv id-rsa-minecrft .. )
 chown -R minecrft.minecrft .
 chown root minecraft-server.sh
 chmod 755 minecraft-server.sh
