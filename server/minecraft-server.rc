@@ -12,24 +12,24 @@
 # Should-Stop:       
 # X-Start-Before:    
 # X-Stop-After:      
+# X-Interactive:     true
 # Default-Start:     2 3 4 5
 # Default-Stop:      0 1 6
-# X-Interactive:     true
 # Short-Description: Minecraft server
 # Description:       Starts the Minecraft server.
 ### END INIT INFO
 
-SERVERDIR=/usr/share/minecraft-server
+SERVER_DIR=@SERVER_DIR@
 
 # See how we were called.
 case "$1" in
       start)
 	echo -n "Starting Minecraft server..."
-	$SERVERDIR/minecraft-server.sh start
+	"$SERVER_DIR"/minecraft-server.sh start
 	;;
       stop)
 	echo -n "Stopping Minecraft server..."
-	$SERVERDIR/minecraft-server.sh stop
+	"$SERVER_DIR"/minecraft-server.sh stop
 	;;
       restart|force-reload)
 	echo "Restarting Minecraft server."
@@ -37,7 +37,7 @@ case "$1" in
 	sh /etc/init.d/minecraft-server start
 	;;
       connect)
-        $SERVERDIR/minecraft-server.sh connect
+        "$SERVER_DIR"/minecraft-server.sh connect
         ;;
       *)
         echo "Usage: minecraft-server {start|stop|restart|force-reload|connect}"
