@@ -15,7 +15,7 @@ CRAFTBUKKIT_URL="http://dl.bukkit.org/latest-rb/craftbukkit.jar"
 PREFIX=/usr/share
 SERVER_DIR=$PREFIX/minecraft-server
 
-if [ ! -f "`pwd`/install-minecraft-server.sh" ]
+if [ ! -f "./install-minecraft-server.sh" ]
 then
     echo "$PGM: Please run from installation directory" >&2
     exit 1
