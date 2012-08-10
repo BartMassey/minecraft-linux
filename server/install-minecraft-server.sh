@@ -43,11 +43,11 @@ esac
 chown minecrft "$SERVER_DIR"
 
 cp minecraft-server.sh "$SERVER_DIR"/
-chmod +x "$SERVER_DIR"/minecraft-server.sh
 
 sed "s#@SERVER_DIR@#$SERVER_DIR#g" \
     minecraft-server.rc >/etc/init.d/minecraft-server
-chmod +x /etc/init.d/minecraft-server
+chown root /etc/init.d/minecraft-server
+chmod 755 /etc/init.d/minecraft-server
 update-rc.d minecraft-server enable
 
 cd "$SERVER_DIR"
@@ -59,6 +59,8 @@ mkdir .ssh
   chmod 600 authorized_keys &&
   mv id-rsa-minecraft .. )
 chown -R minecrft.minecrft .
+chown root minecraft-server.sh
+chmod 755 minecraft-server.sh
 wget -O craftbukkit.jar "$CRAFTBUKKIT_URL"
 if [ $? -ne 0 ]
 then
