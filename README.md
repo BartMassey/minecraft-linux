@@ -22,9 +22,10 @@ server runs as user `minecrft`.
 
 The directory `client` contains instructions and scripts for
 setting up a Linux Minecraft client in a reasonable fashion.
-The central install script here is a lightly-edited version
-of a script by Willington Vega, which I found on
-[GitHub Gist](https://gist.github.com/728367).
+The central install script here was inspired by a script by
+Willington Vega, which I found on [GitHub
+Gist](https://gist.github.com/728367). Ultimately, though, I
+wrote it from scratch.
 
 See you in the mines.
 
