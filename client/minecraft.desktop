@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Minecraft
+Exec=minecraft
+Icon=/usr/share/icons/hicolor/scalable/apps/minecraft.svg
+Terminal=false
+Categories=Game;
+Type=Application
