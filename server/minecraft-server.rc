@@ -1,0 +1,48 @@
+#!/bin/sh
+# Copyright © 2012 Bart Massey
+# [This program is licensed under the "MIT License"]
+# Please see the file COPYING in the source
+# distribution of this software for license terms.
+
+### BEGIN INIT INFO
+# Provides:          minecraft-server
+# Required-Start:    $network
+# Required-Stop:     $network
+# Should-Start:      
+# Should-Stop:       
+# X-Start-Before:    
+# X-Stop-After:      
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# X-Interactive:     true
+# Short-Description: Minecraft server
+# Description:       Starts the Minecraft server.
+### END INIT INFO
+
+SERVERDIR=/usr/local/opt/minecraft-server
+
+# See how we were called.
+case "$1" in
+      start)
+	echo -n "Starting Minecraft server..."
+	$SERVERDIR/minecraft-server.sh start
+	;;
+      stop)
+	echo -n "Stopping Minecraft server..."
+	$SERVERDIR/minecraft-server.sh stop
+	;;
+      restart|force-reload)
+	echo "Restarting Minecraft server."
+	sh /etc/init.d/minecraft-server stop
+	sh /etc/init.d/minecraft-server start
+	;;
+      connect)
+        $SERVERDIR/minecraft-server.sh connect
+        ;;
+      *)
+        echo "Usage: minecraft-server {start|stop|restart|force-reload|connect}"
+        exit 1
+	;;
+esac
+
+exit 0
