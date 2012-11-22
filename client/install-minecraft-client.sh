@@ -25,6 +25,14 @@ DESKTOP_DIR=$SHARE/applications
 # line in minecraft.desktop .
 ICON_DIR=$SHARE/icons/hicolor
 
+if [ -d "$CLIENT_DIR" ] || mkdir "$CLIENT_DIR"
+then
+    :
+else
+    echo "No client directory $CLIENT_DIR, and cannot create." >&2
+    exit 1
+fi
+
 if [ ! -f "./install-minecraft-client.sh" ]
 then
     echo "$PGM: Please run from installation directory" >&2
